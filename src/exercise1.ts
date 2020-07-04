@@ -1,8 +1,8 @@
 
 // Recommendation: Use TypeScript 4
 
-import type { Zero, Succ, Prec, Plus, Minus } from './spoiler';
-import { str, zero, succ, prec, plus, minus } from './spoiler';
+import type { Zero, Succ, Prec, Plus, Minus } from './spoiler1';
+import { str, zero, succ, prec, plus, minus } from './spoiler1';
 
 type One = Succ<Zero>
 type Two = Succ<One>
