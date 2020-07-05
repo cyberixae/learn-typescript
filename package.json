@@ -1,0 +1,19 @@
+{
+  "name": "learn-typescript",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "yarn tsc --outDir lib ./src/exercise1.ts",
+    "test": "yarn build && node ./lib/exercise1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyberixae/learn-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cyberixae/learn-typescript/issues"
+  },
+  "homepage": "https://github.com/cyberixae/learn-typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.0.0-beta"
+  }
+}
