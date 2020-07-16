@@ -53,12 +53,27 @@ following simple steps without any understanding of the field of mathematics or 
 This was part of a bigger debate whether mathematical proofs should make sense to people or simply
 be verifiable by a computer.
 
-Initially, lambda calculus was considered a failure since there was no guarantee that
-a program written in lambda calculus would ever terminate or provide any meaningful answer.
-However, it was later discovered that a big part of computer science is about dealing with
-side effects of the computation rather than the ultimate result. For example, a computer
-game might return information about the player's high score as a result, but the experience
-of playing the game is what really matters.
+Lambda calculus was initially considered a failure since there is no guarantee that a proof
+written in lambda calculus could ever be reduced to a meaningful result. However, this
+property of "running forever" was later discovered to be central to many computer programs.
+In computer science, dealing with the side effects of a computation, is often as important
+if not more important than the actual result. For example, in case of a computer game, the
+realtime interaction with the game would be more important than the computed result.
+
+Where computers require data and programs to be encoded as bits, lambda calculus requires
+them to be encoded as functions. Some functions represent values while other functions
+represent operations on those values. As is the case with bits, a function in lambda
+calculus is meaningless until we assign a meaning to it. By passing one function to
+another we *decide* to run that function as a program to process the function we pass
+to it as input.
+
+
+
+
+
+The Church–Turing thesis later pointed out that the Turing Machine is essentially a
+computer that runs programs written in lambda calculus.
+
 
 
 # Basics
