@@ -46,6 +46,19 @@ book, we consider writing processor instructions in bits (or hexdecimal) to be t
 programming. A programmer working in this manner needs to know the machine language defined by the
 builders of the processor. Some x86 language for example.
 
+The theory of programming languages is based on lambda calculus. Lambda calculus was created with the
+intention of making mathematical proofs mechanically verifiable. A proof, written in lambda calculus,
+would be given to a computer ( a machine or a person ). The computer would then verify the proof by
+following simple steps without any understanding of the field of mathematics or the proof itself.
+This was part of a bigger debate whether mathematical proofs should make sense to people or simply
+be verifiable by a computer.
+
+Initially, lambda calculus was considered a failure since there was no guarantee that
+a program written in lambda calculus would ever terminate or provide any meaningful answer.
+However, it was later discovered that a big part of computer science is about dealing with
+side effects of the computation rather than the ultimate result. For example, a computer
+game might return information about the player's high score as a result, but the experience
+of playing the game is what really matters.
 
 
 # Basics
