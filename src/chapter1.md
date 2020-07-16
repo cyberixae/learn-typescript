@@ -2,11 +2,12 @@
 
 # Preface
 
-# Computers
-
 Computers are machines that can do almost anything as long as we manage to describe what we want them to do.
+This book is dedicated to trying.
 
-Computers are base on a theoretical model called turing machine. The concept of turing machine
+## Computers
+
+Computers are based on a theoretical model called turing machine. The concept of turing machine
 was created by Alan Turing with the intention of automating mathematics. Before the invention
 of mechanical computers, companies and governments used to hire people to perform important
 computations. The term "computer" was then used for the machine that replaced these workers.
@@ -27,7 +28,31 @@ as instructions and will modify other parts of the memory based on those instruc
 themselves do *not* have any intrinsic meaning. By poiting the processor at a certain memory location
 we *decide* to interpret that part of the memory as executable program code.
 
-# Human Interaction
+## Programming
+
+The theory of programming languages is based on lambda calculus. Lambda calculus
+was created with the intention of making mathematical proofs mechanically verifiable. A proof,
+written in lambda calculus, would be given to a computer ( a machine or a person ). The computer
+would then verify the proof by following simple steps without any understanding of the field of
+mathematics or the proof itself. This was part of a bigger debate whether mathematical proofs
+should make sense to people or simply be verifiable by a computer.
+
+Lambda calculus was initially considered a failure since there is no guarantee that a proof
+written in lambda calculus could ever be reduced to a meaningful result. However, this
+property of "running forever" was later discovered to be central to many computer programs.
+In computer science, dealing with the side effects of a computation, is often as important
+if not more important than the actual result. For example, in case of a computer game, the
+realtime interaction with the game would be more important than the computed result.
+
+Where computers require data and programs to be encoded as bits, lambda calculus requires
+them to be encoded as functions. A function is a mathematical creature that takes an input
+and produces an output based on the given input. Some functions represent values while
+other functions represent operations on those values. As is the case with bits, a function
+in lambda calculus is meaningless until we assign a meaning to it. By passing one function
+to another we *decide* to run that function as a program to process the function we pass
+to it as input.
+
+## Humans
 
 Humans interact with computers through human interface devices. Some early computers, like the Altair 8800
 home computer, used lights and switches for this purpose. The lights would show whether a bit was one or zero
@@ -59,57 +84,39 @@ would be assembled into an executable binary by a separate assembler program tha
 replace the keywords with specific bit patterns. Flat assembler is one example of a modern
 assembler that is still in use.
 
-# Programming Languages
+# Control
 
-The more fundamental theory of programming languages is based on lambda calculus. Lambda calculus
-was created with the intention of making mathematical proofs mechanically verifiable. A proof,
-written in lambda calculus, would be given to a computer ( a machine or a person ). The computer
-would then verify the proof by following simple steps without any understanding of the field of
-mathematics or the proof itself. This was part of a bigger debate whether mathematical proofs
-should make sense to people or simply be verifiable by a computer.
-
-Lambda calculus was initially considered a failure since there is no guarantee that a proof
-written in lambda calculus could ever be reduced to a meaningful result. However, this
-property of "running forever" was later discovered to be central to many computer programs.
-In computer science, dealing with the side effects of a computation, is often as important
-if not more important than the actual result. For example, in case of a computer game, the
-realtime interaction with the game would be more important than the computed result.
-
-Where computers require data and programs to be encoded as bits, lambda calculus requires
-them to be encoded as functions. A function is a mathematical creature that takes an input
-and produces an output based on the given input. Some functions represent values while
-other functions represent operations on those values. As is the case with bits, a function
-in lambda calculus is meaningless until we assign a meaning to it. By passing one function
-to another we *decide* to run that function as a program to process the function we pass
-to it as input. The turing machine is essentially a computer for running programs written
-in lambda calculus. The Church–Turing thesis explores this connection between the two models.
-
-The biggest similarity between turing machine and lambda calculus is the abstract property
-that anything could theoretically mean anything. This creates the need to keep track of
-what we mean by different constructs that we build out of bits or functions. This is done
-by introducing type systems that keep track of such essential meta information. Many
-modern security vulnerabilities are based on situations where we loose track of the type
-information. When this happens, the computer may end up executing an untrusted music file
-as a trusted computer program.
+The Church–Turing thesis explores the connection between computers and programming languages.
+It points out that the turing machine is essentially a computer for running programs written
+in lambda calculus. The two models share the feature that nothing has an intrinsic meaning.
+There is thefore a need to keep track of what we mean by different constructs that we build
+out of bits or functions. This can be done by introducing a type system for tracking of such
+essential meta information. Many modern security vulnerabilities are based on situations where
+the computer fails to identify the type of some piece of information. When this happens, we
+may end up executing an untrusted music file as a trusted computer program.
 
 The biggest difference between the turing machine and lambda calculus is the turing machines
 global nature. Any part of the program running on a turing machine is able to read or mutate
 any other part of the machine's global state at any point. This provides full control over
-the machine but makes it hard to reason about the computation requiring
-analysis of the state of the entire computer. Lambda calculus on the other hand doesn't
-provide much control over the program's execution but makes it easier to reason about the
-correctness of the program by abstracting away several details of execution.
+the machine but makes it hard to reason about the computation. Lambda calculus on the other
+hand doesn't provide much control over the program's execution. The isolated nature of each
+function makes them easier to reason about, since undocumented interactions between two
+functions is made impossible. This trade-off between reliable behaviour and reliable results
+is the main reason why so many different programming language are actively being used.  
 
+# Studying
 
+This programming guide discusses TypeScript which is the ultimate hybrid programming language
+that supports all kinds of random things. This has the benefit of being suitable for teaching
+lots of things and has lots of possible applications. The downside is that two TypeScript
+programmers do not necessarily have a common language since they may have studied different
+aspects of it.
 
+If you are interrested in something more specific, you may wish to pick another language. In
+particular I would recommend; x86 if you are interrested in machine languages, Fasm if you are
+interested in assembler, C if you are interrested in systems programming, Haskell if you are
+interrested in functional programming and Python if you are not interrested in programming
+but need to do it anyway.
 
-
-
-
-# Basics
-
-
-## Tuple
-
-
-
+Most programming guides start with printing hello world or calculating the fibonacci sequence.
+This guide won't jump into such complicated things immediately but perhaps we'll get there one day.
