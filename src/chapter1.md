@@ -2,9 +2,11 @@
 
 # Preface
 
+# Computers
+
 Computers are machines that can do almost anything as long as we manage to describe what we want them to do.
 
-Computers are base on a theoretical model called Turing Machine. The concept of Turing Machine
+Computers are base on a theoretical model called turing machine. The concept of turing machine
 was created by Alan Turing with the intention of automating mathematics. Before the invention
 of mechanical computers, companies and governments used to hire people to perform important
 computations. The term "computer" was then used for the machine that replaced these workers.
@@ -24,6 +26,8 @@ the memory of the computer. The processor will then proceed by interpreting that
 as instructions and will modify other parts of the memory based on those instructions. The bits
 themselves do *not* have any intrinsic meaning. By poiting the processor at a certain memory location
 we *decide* to interpret that part of the memory as executable program code.
+
+# Human Interaction
 
 Humans interact with computers through human interface devices. Some early computers, like the Altair 8800
 home computer, used lights and switches for this purpose. The lights would show whether a bit was one or zero
@@ -46,12 +50,23 @@ book, we consider writing processor instructions in bits (or hexdecimal) to be t
 programming. A programmer working in this manner needs to know the machine language defined by the
 builders of the processor. Some x86 language for example.
 
-The theory of programming languages is based on lambda calculus. Lambda calculus was created with the
-intention of making mathematical proofs mechanically verifiable. A proof, written in lambda calculus,
-would be given to a computer ( a machine or a person ). The computer would then verify the proof by
-following simple steps without any understanding of the field of mathematics or the proof itself.
-This was part of a bigger debate whether mathematical proofs should make sense to people or simply
-be verifiable by a computer.
+Typing in machine code as hex decimal is certainly faster than operating one bit at a time but
+it still has the major problem that you have to remember the meaning of all the numbers you type.
+This way of writing computer programs as numbers was quickly replaced by creation of assembler
+programs. The introduction of an assembler made it possible to write programs as text with a
+regular text editor rather than a numeric hex editor. The text file containing the source code
+would be assembled into an executable binary by a separate assembler program that would simply
+replace the keywords with specific bit patterns. Flat assembler is one example of a modern
+assembler that is still in use.
+
+# Programming Languages
+
+The more fundamental theory of programming languages is based on lambda calculus. Lambda calculus
+was created with the intention of making mathematical proofs mechanically verifiable. A proof,
+written in lambda calculus, would be given to a computer ( a machine or a person ). The computer
+would then verify the proof by following simple steps without any understanding of the field of
+mathematics or the proof itself. This was part of a bigger debate whether mathematical proofs
+should make sense to people or simply be verifiable by a computer.
 
 Lambda calculus was initially considered a failure since there is no guarantee that a proof
 written in lambda calculus could ever be reduced to a meaningful result. However, this
@@ -61,18 +76,33 @@ if not more important than the actual result. For example, in case of a computer
 realtime interaction with the game would be more important than the computed result.
 
 Where computers require data and programs to be encoded as bits, lambda calculus requires
-them to be encoded as functions. Some functions represent values while other functions
-represent operations on those values. As is the case with bits, a function in lambda
-calculus is meaningless until we assign a meaning to it. By passing one function to
-another we *decide* to run that function as a program to process the function we pass
-to it as input.
+them to be encoded as functions. A function is a mathematical creature that takes an input
+and produces an output based on the given input. Some functions represent values while
+other functions represent operations on those values. As is the case with bits, a function
+in lambda calculus is meaningless until we assign a meaning to it. By passing one function
+to another we *decide* to run that function as a program to process the function we pass
+to it as input. The turing machine is essentially a computer for running programs written
+in lambda calculus. The Church–Turing thesis explores this connection between the two models.
+
+The biggest similarity between turing machine and lambda calculus is the abstract property
+that anything could theoretically mean anything. This creates the need to keep track of
+what we mean by different constructs that we build out of bits or functions. This is done
+by introducing type systems that keep track of such essential meta information. Many
+modern security vulnerabilities are based on situations where we loose track of the type
+information. When this happens, the computer may end up executing an untrusted music file
+as a trusted computer program.
+
+The biggest difference between the turing machine and lambda calculus is the turing machines
+global nature. Any part of the program running on a turing machine is able to read or mutate
+any other part of the machine's global state at any point. This provides full control over
+the machine but makes it hard to reason about the computation requiring
+analysis of the state of the entire computer. Lambda calculus on the other hand doesn't
+provide much control over the program's execution but makes it easier to reason about the
+correctness of the program by abstracting away several details of execution.
 
 
 
 
-
-The Church–Turing thesis later pointed out that the Turing Machine is essentially a
-computer that runs programs written in lambda calculus.
 
 
 
