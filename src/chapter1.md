@@ -40,18 +40,13 @@ both representations of the number 255.
 
 Computers are part of the physical World and there is nothing preventing a programmer from
 interacting with the computer directly through use of magnets and electricity. However, since this
-tutorial is about programming we will limit ourselves to things that are doable through basic human 
-interface devices. Thus, in the context of this book, we consider writing processor instructions in
-bits (or hexdecimal) to be the lowest level of programming. A programmer working in this manner needs
-to know the machine language defined by the builders of the processor. Some x86 language for example.
+tutorial is about programming, and not computer architectures or information security, we will limit
+ourselves to things that are doable through basic human interface devices. Thus, in the context of this
+book, we consider writing processor instructions in bits (or hexdecimal) to be the lowest level of
+programming. A programmer working in this manner needs to know the machine language defined by the
+builders of the processor. Some x86 language for example.
 
 
-writing computer programs in various programming languages has now become
-the most direct form of human-computer interaction.
-
-
-With direct bit manipulation made impossible, writing computer programs in a programming language is now the
-Various programming languages have been developed for this purpose. 
 
 # Basics
 
