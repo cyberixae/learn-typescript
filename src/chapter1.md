@@ -42,11 +42,9 @@ Computers are part of the physical World and there is nothing preventing a progr
 interacting with the computer directly through use of magnets and electricity. However, since this
 tutorial is about programming we will limit ourselves to things that are doable through basic human 
 interface devices. Thus, in the context of this book, we consider writing processor instructions in
-bits (or hexdecimal) to be the lowest level of programming.  
+bits (or hexdecimal) to be the lowest level of programming. A programmer working in this manner needs
+to know the machine language defined by the builders of the processor. Some x86 language for example.
 
-Instead of zeros
-and ones. Writing instructions for the processor as hex decimal numbers is the lowest level of
-programming 
 
 writing computer programs in various programming languages has now become
 the most direct form of human-computer interaction.
