@@ -116,7 +116,7 @@ const plus: PlusF = (a, b) => [...a, ...b]
 
 Above we implemented some core parts of Peano Arithmetics, a mathematical model that explains how to deal with apples.
 The main takeaway from the above exercise is to recognise how we can define our dreams and how we can turn them into reality.
-Our programs consits of two parts, a dream world of types and categories that we use to describe the abstract nature of
+Our programs consist of two parts, a dream world of types and categories that we use to describe the abstract nature of
 the software we are writing and the concrete world of functions where those ideas become concrete. Developing software
 is an ongoing conversation between these two Worlds -- the abstract and the concrete.
 
@@ -132,15 +132,15 @@ type PrecF = <P extends Pile>(x: [Apple, ...P]) => P
 const prec: PrecF = ([_apple, ...pile]) => pile
 ```
 
-Minus lets you subtract one pile from another but requires casting the result with `as`.
+Minus lets you subtract one pile from another but the implementation requires a type cast.
 
 ```typescript
 type Minus<A extends Plus<Pile, B>, B extends Pile> = A extends Plus<infer C, B> ? C : never
-type MinusF = <A extends Plus<Pile, B>, B extends Pile>(a: A, b: B) => Minus<A, B>
-const minus: MinusF = <A extends Plus<Pile, B>, B extends Pile>(a: A, b: B): Minus<A, B> => a.slice(b.length) as Minus<A, B>
+type MinusF = <A extends Plus<Pile, B>, B extends Pile>(x: A, y: B) =>  Minus<A, B>
+const minus: MinusF = (a, b) => a.slice(b.length) as any
 ```
 
-FromPile lets you get the size of a pile as a typescript number but the type gets coerced into any number.
+FromPile lets you get the size of a pile as a typescript number but the type of the answer gets coerced into any number.
 
 ```typescript
 type FromPile<P extends Pile> = number // inaccurate :-(
