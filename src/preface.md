@@ -25,8 +25,8 @@ The amount of things that a single computer can do at one time is limited by the
 To execute a program a processor is initialized with the starting location of the program code within
 the memory of the computer. The processor will then proceed by interpreting that part of the memory
 as instructions and will modify other parts of the memory based on those instructions. The bits
-themselves do *not* have any intrinsic meaning. By poiting the processor at a certain memory location
-we *decide* to interpret that part of the memory as executable program code.
+themselves do **not** have any intrinsic meaning. By poiting the processor at a certain memory location
+we **decide** to interpret that part of the memory as executable program code.
 
 ## Programming
 
@@ -49,7 +49,7 @@ them to be encoded as functions. A function is a mathematical creature that take
 and produces an output based on the given input. Some functions represent values while
 other functions represent operations on those values. As is the case with bits, a function
 in lambda calculus is meaningless until we assign a meaning to it. By passing one function
-to another we *decide* to run that function as a program to process the function we pass
+to another we **decide** to run that function as a program to process the function we pass
 to it as input.
 
 ## Humans
@@ -84,39 +84,73 @@ would be assembled into an executable binary by a separate assembler program tha
 replace the keywords with specific bit patterns. Flat assembler is one example of a modern
 assembler that is still in use.
 
+While assemblers are still in use today they have been largely replaced by compilers.
+Compilers have a similar role, they are also programs that transform human readable source
+code into machine readable binaries but unlike assemblers they are allowed to fundamentally
+change structure of the program as long as it doesn't change the result of the computation.
+The disconnect between the two structures makes it possible to make the source language
+easier for humans to understand and the machine language easier for the computer to execute.
+GCC is one famous example of a compiler that is used to compile the C programming language
+and various other similar languages.
+
+In addition to assembling or compiling the source code on forehand it is possible to do
+realtime interprettion. In this model a translator program called the interpreter reads
+the source code and explains it to the processor. This is slightly slower since the
+interpreter needs to so some extra work to translate the source code. However, the
+slowdown is often not noticeable and skipping the compilation step often makes it faster
+to do experimentation. Many programming languages use an interpreter to provide a REPL,
+a command line that can be used for real time experimentation with source code. However,
+programs written in scripting languages, such as Python, would typically be run through
+an interpreter in their final form.
+
 # Control
 
 The Church–Turing thesis explores the connection between computers and programming languages.
-It points out that the turing machine is essentially a computer for running programs written
-in lambda calculus. The two models share the feature that nothing has an intrinsic meaning.
-There is thefore a need to keep track of what we mean by different constructs that we build
-out of bits or functions. This can be done by introducing a type system for tracking of such
-essential meta information. Many modern security vulnerabilities are based on situations where
-the computer fails to identify the type of some piece of information. When this happens, we
-may end up executing an untrusted music file as a trusted computer program.
+It points out similarities between turing machine and lambda calculus. The two models share
+the feature that nothing has an intrinsic meaning. There is thefore a need to keep track of
+what we mean by different constructs that we build out of bits or functions. This is done
+by introducing a type system for tracking of such essential meta information. Many modern
+security vulnerabilities are based on situations where the computer fails to identify the
+type of some piece of information. When this happens, we may end up executing an untrusted
+music file as a trusted computer program.
 
-The biggest difference between the turing machine and lambda calculus is the turing machines
-global nature. Any part of the program running on a turing machine is able to read or mutate
-any other part of the machine's global state at any point. This provides full control over
-the machine but makes it hard to reason about the computation. Lambda calculus on the other
-hand doesn't provide much control over the program's execution. The isolated nature of each
-function makes them easier to reason about, since undocumented interactions between two
-functions is made impossible. This trade-off between reliable behaviour and reliable results
-is the main reason why so many different programming language are actively being used.  
+The biggest difference between the two models is the turing machines global nature. The
+program that the turing machine is executing is not that different from a cooking recipe.
+The recipe can contain instructions modifying any part of the memory of the computer.
+Since the recipe is stored in the computers memory too, the recipe may even contain
+instructions for modifying the recipe itself as it progresses execution. Lambda calculus
+on the other hand has no concept of direct memory accesses and each function operates
+in isolation constructing new values based on given input values. This makes the programs
+safe to execute but makes exact control of the machine difficult. This trade-off between
+reliable behaviour and reliable results is the main reason why so many different programming
+languages are actively being used.
+
+Most programming languages today fall into one of two big categories that are based on the
+two theoretical models. The procedural programming languages are based on the turing machine
+model and focus on instructing the computer what to do, while the functional programming
+languages are based on lambda calculus and focus on expression of thoughts. Most languages
+mentioned above are either procedural or somewhat procedural. However some languages, like
+Haskell for example, use functional language concepts throughout.
 
 # Studying
+
+As programming languages have evolved further and further away from the raw hardware level
+it has become more and more plausible to express thoughts directly and forget details of
+the programs execution. This has caused many programming languages to become hybrid
+programming languages with some features from both worlds.
 
 This programming guide discusses TypeScript which is the ultimate hybrid programming language
 that supports all kinds of random things. This has the benefit of being suitable for teaching
 lots of things and has lots of possible applications. The downside is that two TypeScript
 programmers do not necessarily have a common language since they may have studied different
-aspects of it.
+aspects of TypeScript.
 
 If you are interrested in something more specific, you may wish to pick another language. In
-particular I would recommend; x86 if you are interrested in machine languages, Fasm if you are
-interested in assembler, C if you are interrested in systems programming, Haskell if you are
-interrested in functional programming and Python if you are not interrested in programming
-but need to do it anyway.
+particular I would recommend; 80386 from the x86 family if you are interrested in machine
+languages, Fasm if you are interested in assembler, C if you are interrested in high level
+programming with strong control over execution, Haskell if you are interrested in functional
+programming with strong guarantees over corectness of the result and Python if you are not
+interrested in programming and need to simply get things done with it.
 
 Most programming guides start with printing hello world or calculating the fibonacci sequence.
 This guide won't jump into such complicated things immediately but perhaps we'll get there one day.
