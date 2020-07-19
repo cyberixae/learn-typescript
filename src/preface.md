@@ -154,5 +154,8 @@ programming with strong control over execution, Haskell if you are interrested i
 programming with strong correctness guarantees and Python if you are not that interrested
 in programming but need to get things done anyway.
 
-Most programming guides start with printing hello world or calculating the fibonacci sequence.
-This guide won't jump into such complicated things immediately but perhaps we'll get there one day.
+Don't worry about this choice too much. Regardless of the language you choose, learning a
+second language will be a lot easier, since by then you have an understanding of some of
+the core concepts of the two theoretical models. There is no right or wrong. Just pick a
+language that you feel motivated to learn or a language that you can discus with someone
+when you feel troubled.
